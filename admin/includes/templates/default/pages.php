@@ -168,6 +168,8 @@
 					<input type="hidden" name="id" value="<? echo $page->details('id'); ?>">
 					<input type="hidden" name="action" value="delete">
 					
+					<div class="alert">Make sure all child pages are deleted or assigned to different parents before deleting this page</div>
+					
 					<p class="text-error">You are about to delete the following page:</p>
 					
 					<br>
