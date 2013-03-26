@@ -1,16 +1,16 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'].'/owcms/includes/header.php');
+<?php require_once('../owcms/includes/header.php');
 
 $auth = new owcms_auth;
 
 if ($_REQUEST['logout']) {
 
 	$auth->logout();
-	header("Location: /");
+	header("Location: //".URL.LOGIN_REDIRECT);
 	exit;
 }
 elseif ($auth->is_logged_in(true)) {
 
-	header("Location: ".LOGIN_REDIRECT);
+	header("Location: //".URL.LOGIN_REDIRECT);
 	
 }
 else {
@@ -19,7 +19,7 @@ else {
 	
 	/* $auth->login() will redirect automatically, and the script should end after it. If not, something clearly went wrong. Therefore we redirect to this. */
 	
-	header("Location: ".LOGIN_URL."?login_error=login_failed");
+	header("Location: //".URL.LOGIN_URL."?login_error=login_failed");
 
 }
 
