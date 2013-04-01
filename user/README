@@ -1,0 +1,7 @@
+/user/
+
+This directory comes with pre-existing files to integrate with the public website
+
+auth.php - Login, logout handler
+save.php - User info update handler
+signup.php - Registration handler

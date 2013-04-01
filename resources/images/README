@@ -1,0 +1,3 @@
+/resources/images/
+
+Location for static site images, e.g, images that are included by stylesheets in /resources/css/
