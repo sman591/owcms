@@ -24,8 +24,8 @@ $config['LIVE']['FILES_FILEPATH']		= $config['LIVE']['ROOT_FILEPATH'].'/files';	
 
 
 /*  Site  */
-$config['LIVE']['SITE_NAME']			= 'Example Site';								/* Default name of site. Note the <title> tag is managed by the CMS */
-$config['LIVE']['SHORT_NAME']			= 'example';									/* Short name of website for unique ID's, auth, etc */
+$config['LIVE']['SITE_NAME']			= 'My Website';									/* Default name of site. Note the <title> tag is managed by the CMS */
+$config['LIVE']['SHORT_NAME']			= 'mywebsite';									/* Short name of website for unique ID's, auth, etc */
 $config['LIVE']['ENABLE_SESSIONS']		= true;											/* Automatically enable $_SESSION use for site; session_start() for every page */
 $config['LIVE']['TEMPLATE']				= 'default';									/* Template in /includes/templates/ to use */
 
@@ -45,10 +45,10 @@ $config['LIVE']['ALLOW_CONCURRENT_LOGINS']	= true;										/* Whether or not to
 
 
 /*  MySQL  */
-$config['LIVE']['MYSQL_DATABASE']		= 'localhost';
-$config['LIVE']['MYSQL_USER']			= '';
-$config['LIVE']['MYSQL_PASSWORD']		= '';
-$config['LIVE']['MYSQL_TABLE']			= '';
+$config['LIVE']['MYSQL_DATABASE']		= 'localhost';									/* MySQL Database */
+$config['LIVE']['MYSQL_USER']			= '';											/* MySQL Username */
+$config['LIVE']['MYSQL_PASSWORD']		= '';											/* MySQL Password */
+$config['LIVE']['MYSQL_TABLE']			= '';											/* MySQL Table */
 $config['LIVE']['MYSQL_CONNECT_FAIL']	= 'Sorry, there was an error connecting to our databases. Please try again later.'; /* What to show when MySQL cannot connect. */
 
 
@@ -112,10 +112,16 @@ $config['LOCAL']['MYSQL_TABLE']			= '';
 	DO NOT SHARE - These are responsible 
 	for the security of your website!
 	
+	Must be generated per website:
+	
+	$td = mcrypt_module_open('rijndael-256', '', 'ofb', '');
+	$cookie_iv = md5(mcrypt_create_iv(mcrypt_enc_get_iv_size($td), mt_rand()));
+	$cookie_key = hash('sha512', md5(mt_rand()));
+	
 *****************************************/
 
-$config['LIVE']['COOKIE_KEY']			= ''; 											/* 128-bit random hash */
-$config['LIVE']['COOKIE_IV']			= ''; 											/* 32-bit random hash */
+$config['LIVE']['COOKIE_KEY']			= '';
+$config['LIVE']['COOKIE_IV']			= '';
 $config['LIVE']['AUTH_COOKIE_NAME']		= 'auth';
 
 ?>
