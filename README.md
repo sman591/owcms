@@ -3,6 +3,7 @@ oWeb CMS
 
 A custom-built content management system continually improved upon for new websites.
 
+![owCMS Screenshot](https://raw.github.com/sman591/owcms/master/Screenshot.png)
 
 Author
 ------------
